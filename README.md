@@ -1,7 +1,8 @@
 # getcnandwhois
 to research global ip
 
-$ ./getcntest.sh list.txt 
+$ ./getcntest.sh list.txt
+
 52.175.10.84_cname=wdcp.microsoft.com_OrgName:        Microsoft Corporation
 13.91.52.255_cname=shasta-ars.symantec.com_OrgName:        Microsoft Corporation
 13.92.82.125_cname=shasta-ars.symantec.com_OrgName:        Microsoft Corporation
