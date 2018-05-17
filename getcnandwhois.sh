@@ -1,7 +1,7 @@
 #!/bin/bash
 ######################################################################
-# 
-# $ cat list.txt 
+#
+# $ cat list.txt
 # 34.225.197.235
 # 18.205.241.111
 # 52.205.121.87
@@ -11,10 +11,9 @@
 ######################################################################
 while read line
 do
-  echo -n $line
-  echo -n _ 
+  echo -n '"'$line'","'
   openssl s_client -connect $line:443 < /dev/null 2>/dev/null | grep -e "^ 0 .*" | grep -o CN.* | sed -e "s/CN=/cname=/g" | tr -d \\n
-  echo -n _
+  echo -n '","'
   whois $line | grep OrgName | head -n 1 | tr -d \\n
-  echo '' 
-done < $1 
+  echo '"'
+done < $1
